@@ -2,3 +2,11 @@ node_modules/
 # video nguồn và video dẫn xuất từ bên thứ ba: không đưa lên repo công khai
 cn/source*
 cn/vi-nukied*.mp4
+video2/source*
+video2/*.mp4
+video2/insp/
+video2/work/
+video3/source*
+video3/*.mp4
+video3/insp/
+video3/work/

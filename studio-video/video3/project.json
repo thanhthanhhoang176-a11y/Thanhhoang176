@@ -1,0 +1,248 @@
+{
+  "source": "source.mp4",
+  "out": "vi-domino-train.mp4",
+  "voice_dir": "voices",
+  "work_dir": "work",
+  "ass": "work/subs.ass",
+  "bgm": "bgm.wav",
+  "bgm_volume": 0.14,
+  "tempo": 1.25,
+  "gap": 0.18,
+  "size": [
+    720,
+    1280
+  ],
+  "shots": [
+    [
+      0,
+      4.2
+    ],
+    [
+      4.2,
+      6.033
+    ],
+    [
+      6.033,
+      11.467
+    ],
+    [
+      11.467,
+      15.9
+    ],
+    [
+      15.9,
+      19.0
+    ],
+    [
+      19.0,
+      23.167
+    ],
+    [
+      23.167,
+      25.2
+    ],
+    [
+      25.2,
+      27.667
+    ],
+    [
+      27.667,
+      33
+    ],
+    [
+      33,
+      35.133
+    ],
+    [
+      35.133,
+      40.8
+    ],
+    [
+      40.8,
+      42.05
+    ]
+  ],
+  "lines": [
+    "Bé nhà mình chơi gì cũng chán nhanh? Vậy thử ngay chiếc xe lửa domino này nhé!",
+    "Không đồ chơi nào bền hơn đâu!",
+    "Có hộp nhỏ kéo ra kéo vào, bé tự xếp từng quân domino một, luyện tính kiên nhẫn lắm đó!",
+    "Xếp xong, chú xe lửa chạy tới đâu, nhả domino tới đó, y như đẻ trứng vậy!",
+    "Nhìn thành quả của mình, bé thấy tự hào lắm!",
+    "Bé bây giờ hay thiếu kiên nhẫn chờ đợi, đồ chơi đèn nhạc thì có ngay, còn đây phải từ từ mới đã.",
+    "Phải kiên nhẫn xếp từng quân một.",
+    "Lúc domino đổ rạp, bé mê tít, ghiền luôn!",
+    "Bé chơi đi chơi lại mãi không chán, mẹ vừa rèn tính kiên nhẫn, vừa giúp bé tập trung hơn nhiều.",
+    "Xe còn chỉnh được hướng đi nữa đó!",
+    "Đi đường thẳng hay đường cong đều được, bé tự bày ra bao nhiêu kiểu, đúng là món đồ chơi tuyệt vời cho cả nhà!",
+    "Bé nào cũng mê!"
+  ],
+  "split": {
+    "0": "Bé nhà mình chơi gì cũng chán nhanh?",
+    "2": "Có hộp nhỏ kéo ra kéo vào,",
+    "3": "Xếp xong, chú xe lửa chạy tới đâu,",
+    "5": "Bé bây giờ hay thiếu kiên nhẫn chờ đợi,",
+    "8": "Bé chơi đi chơi lại mãi không chán,",
+    "10": [
+      "Đi đường thẳng hay đường cong đều được,",
+      "bé tự bày ra bao nhiêu kiểu,"
+    ]
+  },
+  "delogo": [],
+  "blur_patches": [
+    {
+      "x": 10,
+      "y": 1205,
+      "w": 700,
+      "h": 60,
+      "from": 0,
+      "to": 4.95,
+      "radius": 14
+    },
+    {
+      "x": 12,
+      "y": 12,
+      "w": 112,
+      "h": 64,
+      "from": 4.95,
+      "radius": 14
+    },
+    {
+      "x": 470,
+      "y": 12,
+      "w": 245,
+      "h": 64,
+      "from": 4.95,
+      "radius": 14
+    }
+  ],
+  "stickers": [
+    {
+      "text": "Chán nhanh",
+      "from": 1.0,
+      "to": 2.5,
+      "size": 48,
+      "color": "0xFFB347",
+      "blur": {
+        "x": 270,
+        "y": 445,
+        "w": 380,
+        "h": 135
+      },
+      "pill": {
+        "x": 290,
+        "y": 478,
+        "w": 330,
+        "h": 76
+      }
+    },
+    {
+      "text": "Kiên nhẫn",
+      "from": 9.9,
+      "to": 11.1,
+      "size": 44,
+      "color": "0xFFB347",
+      "blur": {
+        "x": 80,
+        "y": 350,
+        "w": 240,
+        "h": 100
+      },
+      "pill": {
+        "x": 95,
+        "y": 370,
+        "w": 200,
+        "h": 62
+      }
+    },
+    {
+      "text": "Thành tựu",
+      "from": 16.9,
+      "to": 18.1,
+      "size": 44,
+      "color": "0xFFB347",
+      "blur": {
+        "x": 350,
+        "y": 320,
+        "w": 280,
+        "h": 95
+      },
+      "pill": {
+        "x": 365,
+        "y": 337,
+        "w": 240,
+        "h": 62
+      }
+    },
+    {
+      "text": "Tập trung",
+      "from": 31.9,
+      "to": 32.9,
+      "size": 44,
+      "color": "0xFFB347",
+      "blur": {
+        "x": 350,
+        "y": 415,
+        "w": 280,
+        "h": 95
+      },
+      "pill": {
+        "x": 365,
+        "y": 430,
+        "w": 250,
+        "h": 62
+      }
+    },
+    {
+      "text": "Đường thẳng",
+      "from": 35.4,
+      "to": 36.7,
+      "size": 40,
+      "color": "0xFFB347",
+      "blur": {
+        "x": 370,
+        "y": 425,
+        "w": 270,
+        "h": 150
+      },
+      "pill": {
+        "x": 385,
+        "y": 440,
+        "w": 240,
+        "h": 56
+      }
+    },
+    {
+      "text": "Đường cong",
+      "from": 35.4,
+      "to": 36.7,
+      "size": 40,
+      "color": "0xFFB347",
+      "blur": {
+        "x": 385,
+        "y": 505,
+        "w": 240,
+        "h": 56
+      },
+      "pill": {
+        "x": 385,
+        "y": 505,
+        "w": 240,
+        "h": 56
+      }
+    }
+  ],
+  "subtitle": {
+    "band": {
+      "x": 10,
+      "y": 953,
+      "w": 700,
+      "h": 94,
+      "opacity": 0.5
+    },
+    "pos": [
+      360,
+      1000
+    ]
+  },
+  "credit_text": null
+}
