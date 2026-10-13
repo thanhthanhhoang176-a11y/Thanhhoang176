@@ -13,7 +13,6 @@ ffmpeg -i clean.mp4 -i clean.mp4 -i mix.wav -filter_complex "[0:v]trim=0:31.8,se
 ```
 Phần cuối video (từ giây 31,8) thay trang tài khoản Trung bằng cảnh đồ chơi (19,95–21,9 s chạy tới rồi lùi). Câu kết "Hãy subscribe cho kênh Ghiền Mì Gõ..." bắt đầu giây 32,0.
 
-Việc cần làm: thay giọng Piper bằng giọng nữ ElevenLabs (tiếng Việt, mềm, miền Nam nếu có).
-Khóa ElevenLabs nằm ở "network secret" của môi trường (header `xi-api-key`, host `api.elevenlabs.io`): gọi API không cần tự thêm khóa.
+Giọng hiện tại: ElevenLabs "Anh Thu - Sweet & Engaging" (nữ miền Nam, voice_id `FRYq6nepIbR0lbu7Lus4`, model `eleven_turbo_v2_5`). 13 câu đã tạo sẵn thành `v0.mp3`..`v12.mp3` (đã chép lại bằng Scribe, khớp 100% kịch bản kể cả dấu thanh). `build.py` chỉ đổi mp3 sang wav, rồi trộn + tạo phụ đề; sau đó chạy lệnh ffmpeg ở trên để ra `final.mp4`.
 Cách đọc "Nukied": "Nu kít" (chờ người dùng xác nhận). Phụ đề vẫn ghi "Nukied".
 Yêu cầu giữ nguyên hiệu ứng âm thanh gốc (nền `inst.wav` x2.2, ducking nhẹ).

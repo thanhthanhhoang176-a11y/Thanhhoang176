@@ -1,10 +1,7 @@
 import json,subprocess,textwrap
-import urllib.request
-VOICE="cgSgspJ2msm6clMCkdW9" # Jessica (ElevenLabs), khóa do proxy môi trường tự chèn
+# Giọng ElevenLabs "Anh Thu - Sweet & Engaging" (FRYq6nepIbR0lbu7Lus4), model eleven_turbo_v2_5.
+# v{i}.mp3 được tạo sẵn qua ElevenLabs; ở đây chỉ đổi sang wav.
 def gen(i,text):
-    body=json.dumps({"text":text,"model_id":"eleven_multilingual_v2","voice_settings":{"stability":0.5,"similarity_boost":0.75,"style":0.2,"speed":1.1}}).encode()
-    rq=urllib.request.Request(f"https://api.elevenlabs.io/v1/text-to-speech/{VOICE}?output_format=mp3_44100_128",body,{"Content-Type":"application/json"})
-    open(f"v{i}.mp3","wb").write(urllib.request.urlopen(rq).read())
     subprocess.run(["ffmpeg","-y","-loglevel","error","-i",f"v{i}.mp3","-ar","22050",f"v{i}b.wav"],check=True)
 S=[ # start,end, 中文, tiếng Việt, từ khóa tô màu
 (1.9,4.9,"宝宝会坐以后，就不要玩这些声光电玩具了","Bé biết ngồi rồi, mình bỏ đồ chơi đèn nhạc nha!",["đèn nhạc"]),
