@@ -13,3 +13,22 @@ Nguồn: 28,5 giây, dọc 720x1280. Giọng gốc: người mẹ, tiếng Trung
 | 7 | 27.1 | 小红书。 | (bỏ — tên nền tảng) |
 
 Ghi chú xử lý hình: che hoặc cắt logo 小红书, tên tài khoản Nukied ở góc, phụ đề tiếng Trung in sẵn ở giữa dưới, và màn hình cuối (từ giây ~27).
+
+---
+
+# Bản Việt hoá v2 (đã biên tập lại cho tự nhiên, dùng "cắt lát")
+
+| Cảnh | Giây (video) | Lời thoại + phụ đề |
+|---|---|---|
+| 1 | 0.0–2.8 | Cắt lát rau củ vui thế này, bé nào mà không mê! |
+| 2 | 2.8–5.8 | Bé nhà mình cắt cà rốt, cắt dưa leo mà vui lắm luôn! |
+| 3 | 5.8–9.7 | Đồ chơi này đơn giản lắm, bé chỉ cần ấn xuống rồi trượt qua trượt lại, |
+| 4 | 9.7–13.0 | là từng lát rơi ra liền, bé thấy mới lạ và thích mê! |
+| 5 | 13.0–16.6 | Vừa chơi vừa rèn cho bé nhanh tay, nhanh mắt, nhanh trí nữa đó! |
+| 6 | 16.6–20.8 | Cắt xong, bé tự xếp các lát vào hộp, giúp bé khéo tay và biết tập trung hơn. |
+| 7 | 20.8–24.3 | Bộ có cà rốt, dưa leo và cà tím, hình dáng đáng yêu lắm. |
+| 8 | 24.3–27.0 | Chỉ cần đẩy tới, kéo lui là cắt xong ngay! |
+| 9 | 27.0–30.2 | Chơi đã tay mà dọn cũng dễ, cất vào hộp là gọn! |
+
+Giọng: Chi (ElevenLabs, eleven_v4), tăng tốc 1.25x. Mỗi câu khớp đúng một cảnh quay (cắt theo các lần chuyển cảnh thật của video gốc).
+Đã kiểm tra bằng nhận dạng ngược: giọng đọc khớp từng chữ với phụ đề, 97% tiếng Việt, không lẫn tiếng Trung.
