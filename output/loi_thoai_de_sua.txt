@@ -1,0 +1,68 @@
+LỜI THOẠI ĐỂ BẠN SỬA (sửa trực tiếp dòng "MỚI", giữ nguyên số thứ tự)
+Giọng: ElevenLabs "Anh Thu". Mỗi câu phải đọc xong trong khung thời gian ghi bên cạnh, nên đừng kéo dài câu quá nhiều.
+Khi bạn sửa xong, báo tôi để tạo lại giọng (tốn khoảng 560 credit cho cả 13 câu; chỉ tạo lại câu đã sửa thì rẻ hơn).
+
+Đã áp dụng sẵn: bớt "nè/nha", "bộ cắt cắt vui" -> "bộ Cắt hoa quả".
+Hai lỗi đọc sai bạn báo ("tinh" bị đọc thành "tĩnh", "gần" bị đọc thành "gấn") được xử lý ở ghi chú cuối file.
+
+--------------------------------------------------------------------
+1. [00:01.9 - 00:04.9]
+   CŨ : Bé biết ngồi rồi, mình bỏ đồ chơi đèn nhạc nha!
+   MỚI: Bé biết ngồi rồi, mình bỏ đồ chơi đèn nhạc thôi!
+
+2. [00:04.9 - 00:07.9]
+   CŨ : Bác sĩ nhi khuyên chọn bộ cắt cắt vui, bé khéo tay nè!
+   MỚI: Bác sĩ nhi khuyên chọn bộ Cắt hoa quả, giúp bé khéo tay.
+
+3. [00:07.9 - 00:10.4]
+   CŨ : Bé vận động tinh tốt thường thông minh hơn nè.
+   MỚI: Bé vận động tinh tốt thường thông minh hơn.
+
+4. [00:10.4 - 00:13.4]
+   CŨ : Mỗi lần bé bẻ ra là vận động tinh được tập luyện nè.
+   MỚI: Mỗi lần bé bẻ ra là vận động tinh được tập luyện.
+
+5. [00:13.4 - 00:16.9]
+   CŨ : Trái cây đủ hình dạng giúp bé biết màu sắc, hình khối nữa.
+   MỚI: Trái cây đủ hình dạng giúp bé biết màu sắc, hình khối.
+
+6. [00:16.9 - 00:19.4]
+   CŨ : Đồ bé chạm gần, đừng mua hàng trôi nổi nha.
+   MỚI: Đồ bé hay chạm vào, đừng mua hàng trôi nổi nhé.
+
+7. [00:19.4 - 00:21.9]
+   CŨ : Nukied làm từ nguyên liệu thực vật luôn nè.   (đọc: "Nu kít")
+   MỚI: Nukied làm từ nguyên liệu thực vật luôn.      (đọc: "Nu kít")
+
+8. [00:21.9 - 00:23.4]
+   CŨ : Bé cắn cũng không sao nè.
+   MỚI: Bé cắn cũng không sao.
+
+9. [00:23.4 - 00:25.4]
+   CŨ : Còn giúp bé làm quen rau củ quả nữa.
+   MỚI: Còn giúp bé làm quen rau củ quả nữa.
+
+10. [00:25.4 - 00:27.9]
+   CŨ : Chơi xong, mình cùng bé cất gọn nha.
+   MỚI: Chơi xong, mình cùng bé cất gọn nhé.
+
+11. [00:27.9 - 00:29.9]
+   CŨ : Lớn hơn xíu còn chơi đồ hàng được nè.
+   MỚI: Lớn hơn xíu còn chơi đồ hàng được nữa.
+
+12. [00:29.9 - 00:31.9]
+   CŨ : Chơi tới ba tuổi vẫn ổn luôn nha!
+   MỚI: Chơi tới ba tuổi vẫn ổn luôn!
+
+13. [00:32.0 - 00:35.4]
+   CŨ : Hãy subscribe cho kênh Ghiền Mì Gõ để không bỏ lỡ những video hấp dẫn.
+   MỚI: Hãy subscribe cho kênh Ghiền Mì Gõ để không bỏ lỡ những video hấp dẫn.
+
+--------------------------------------------------------------------
+GHI CHÚ VỀ HAI LỖI ĐỌC SAI
+- "gần" -> "gấn": ở câu 6 tôi đã đổi "chạm gần" thành "hay chạm vào" để tránh từ này.
+  Nếu bạn muốn giữ chữ "gần" ở câu khác, báo tôi, tôi sẽ thử cách viết khác để giọng đọc đúng.
+- "tinh" -> "tĩnh": nằm ở câu 3 và 4 ("vận động tinh"). Đây là thuật ngữ đúng nên tôi giữ nguyên trong bản MỚI.
+  Khi tạo lại, tôi sẽ thử vài cách viết (ví dụ "vận động tinh tế", hoặc tách "tinh" thành từ riêng) rồi nghe lại.
+  Nếu bạn muốn thay hẳn, gợi ý: "cử động khéo léo của đôi tay" hoặc "độ khéo của đôi tay".
+  Lưu ý: lần kiểm tra trước chỉ so chữ chép lại với kịch bản nên không bắt được lỗi giọng sai thanh điệu. Lần này cần bạn nghe lại kết quả.
