@@ -1,0 +1,161 @@
+{
+ "source": "source.mp4",
+ "out": "out/vi-nukied-mem.mp4",
+ "voice_dir": "voices",
+ "work_dir": "work",
+ "ass": "work/subs.ass",
+ "bgm": "bgm.wav",
+ "bgm_volume": 0.14,
+ "tempo": 1.25,
+ "gap": 0.18,
+ "size": [
+  720,
+  1280
+ ],
+ "shots": [
+  [
+   0,
+   2
+  ],
+  [
+   2,
+   3.833
+  ],
+  [
+   3.833,
+   5.6
+  ],
+  [
+   5.6,
+   6.967
+  ],
+  [
+   6.967,
+   10.1
+  ],
+  [
+   10.1,
+   11.6
+  ],
+  [
+   11.6,
+   14.067
+  ],
+  [
+   14.067,
+   16.533
+  ],
+  [
+   16.533,
+   19.267
+  ],
+  [
+   19.267,
+   22.2
+  ],
+  [
+   22.2,
+   24.0
+  ],
+  [
+   24.0,
+   26.54
+  ]
+ ],
+ "lines": [
+  "Món đồ chơi khơi dậy sáng tạo cho bé đây!",
+  "Nam châm mềm biến hình đủ kiểu nè!",
+  "Lo bé mê điện thoại, máy tính?",
+  "Có bộ này cứu bé liền!",
+  "Màu pastel xinh xắn, chất liệu mềm, nam châm hít chắc!",
+  "Từ hình đơn giản tới siêu ngầu!",
+  "Ghép thành chim công xòe đuôi, bé sáng tạo hết ý!",
+  "Vừa là đồ chơi, vừa rèn tư duy không gian, khéo tay!",
+  "Bé vừa chơi vừa học, lớn lên cùng sáng tạo!",
+  "Mẹ rảnh tay trông bé, chưa biết ghép thì xem sách hướng dẫn!",
+  "Bé nhà mình chơi cả buổi chiều luôn!",
+  "Chốt đơn ngay, cho bé tuổi thơ đầy sáng tạo!"
+ ],
+ "split": {
+  "4": "Màu pastel xinh xắn, chất liệu mềm,",
+  "7": "Vừa là đồ chơi,",
+  "9": "Mẹ rảnh tay trông bé,"
+ },
+ "delogo": [],
+ "subtitle": {
+  "band": {
+   "x": 10,
+   "y": 930,
+   "w": 700,
+   "h": 100,
+   "opacity": 0.5
+  },
+  "pos": [
+   360,
+   980
+  ]
+ },
+ "credit_text": null,
+ "patch": [
+  {
+   "sx": 200,
+   "sy": 0,
+   "x": 0,
+   "y": 0,
+   "w": 130,
+   "h": 78,
+   "from": 5.0
+  },
+  {
+   "sx": 200,
+   "sy": 0,
+   "x": 460,
+   "y": 0,
+   "w": 260,
+   "h": 78,
+   "from": 5.0
+  },
+  {
+   "sx": 250,
+   "sy": 1204,
+   "x": 0,
+   "y": 1204,
+   "w": 360,
+   "h": 72,
+   "from": 0,
+   "to": 5.0
+  },
+  {
+   "sx": 250,
+   "sy": 1204,
+   "x": 360,
+   "y": 1204,
+   "w": 360,
+   "h": 72,
+   "from": 0,
+   "to": 5.0
+  }
+ ],
+ "stickers": [
+  {
+   "x": 415,
+   "y": 225,
+   "w": 235,
+   "h": 195,
+   "text": "Chim công",
+   "size": 44,
+   "from": 11.9,
+   "to": 14.0
+  },
+  {
+   "x": 425,
+   "y": 88,
+   "w": 235,
+   "h": 195,
+   "text": "Túi xách",
+   "size": 46,
+   "from": 20.6,
+   "to": 22.1
+  }
+ ]
+}

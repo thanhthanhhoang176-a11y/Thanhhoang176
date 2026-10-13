@@ -93,9 +93,20 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
 
 # 3) Hình: che logo (delogo theo cửa sổ thời gian GỐC) + dải mờ che phụ đề cũ, rồi kéo giãn từng cảnh
 f = "[0:v]"
+# patch: chép một mảng nền sạch (cùng khung hình) đè lên logo; hợp với viền màu phẳng/gradient dọc
+for i, d in enumerate(cfg.get("patch", [])):
+    en = f"between(t,{d.get('from', 0)},{d.get('to', 9999)})"
+    f += (f"split=2[pa{i}][pb{i}];[pb{i}]crop={d['w']}:{d['h']}:{d['sx']}:{d['sy']}[pc{i}];"
+          f"[pa{i}][pc{i}]overlay={d['x']}:{d['y']}:enable='{en}'[pm{i}];[pm{i}]")
 for d in cfg.get("delogo", []):
     en = f"between(t,{d.get('from', 0)},{d.get('to', 9999)})"
     f += f"delogo=x={d['x']}:y={d['y']}:w={d['w']}:h={d['h']}:enable='{en}',"
+# stickers: thay nhãn chữ Trung dán trong cảnh bằng nhãn tiếng Việt (ô vàng viền đen, chữ đen)
+for d in cfg.get("stickers", []):
+    en = f"between(t,{d.get('from', 0)},{d.get('to', 9999)})"
+    f += (f"drawbox=x={d['x']-4}:y={d['y']-4}:w={d['w']+8}:h={d['h']+8}:color=black:t=fill:enable='{en}',"
+          f"drawbox=x={d['x']}:y={d['y']}:w={d['w']}:h={d['h']}:color=0xFFC21A:t=fill:enable='{en}',"
+          f"drawtext=fontfile={FONT}:text='{d['text']}':fontsize={d.get('size', 44)}:fontcolor=black:x={d['x']}+({d['w']}-tw)/2:y={d['y']}+({d['h']}-th)/2:enable='{en}',")
 b = BAND
 f += (f"split=2[base][bl];[bl]crop={b['w']}:{b['h']}:{b['x']}:{b['y']},boxblur=20:3[blur];"
       f"[base][blur]overlay={b['x']}:{b['y']},drawbox=x={b['x']}:y={b['y']}:w={b['w']}:h={b['h']}:color=black@{b.get('opacity', 0.5)}:t=fill[clean]")
