@@ -23,3 +23,7 @@ Tấm chữ trang trí tiếng Trung thay bằng chữ Việt: 三分钟热度 �
 Logo Xiaohongshu + Nukied纽奇: đáy → đỉnh tại giây 4,95.
 
 Kiểm tra ngược bằng nhận dạng giọng: 99,2% tiếng Việt, không lẫn tiếng Trung, khớp phụ đề. Một lỗi: "như ngăn kéo" bị nghe thành "nhưng ăn kéo" → đổi sang "kéo ra kéo vào" và tạo lại riêng câu 3 (kiểm tra lại: khớp 100%).
+
+## Cửa sổ che tấm chữ Trung (giây của video gốc, đã dò 0,1s/khung)
+- 三分钟热度: 0.65–2.25 (chữ đỏ phóng to ở 0.7) · ✅耐心: 9.65–11.35 · ✅成就感: 16.6–18.1 · ✅专注力: 31.75–32.95 (còn 1 khung ở 33.0) · ✅直线/✅弯线: 35.15–36.9
+- Quét tự động bản dựng: 0 khung còn chữ Trung (887 khung).

@@ -74,6 +74,9 @@ Mẹo kỹ thuật đã vấp:
 - Ngắt dòng ASS dùng `\N` (đừng viết `chr(92)+'N'.join(...)` vì sai thứ tự phép toán).
 
 ## Bước 6. Kiểm tra chất lượng (bắt buộc, không bỏ)
+0. **Quét tự động chữ Trung còn sót** (bắt buộc, trước khi gửi người dùng):
+   `python3 -I scripts/scan_leftovers.py source.mp4 <video_dựng>.mp4`. Phần "Bản dựng" phải rỗng. Bước này tồn tại vì lấy mẫu mắt thường (0,5s) làm lỡ khung chữ bay vào/ra: đã có lần gửi video còn lộ chữ ✅成就感 ở 17,0s và ✅专注力 ở 33,0s.
+   Để đặt cửa sổ `stickers`/`blur_patches` đúng: lấy khung nguồn mỗi **0,1s** quanh mỗi tấm (từ trước lúc nó hiện ~0,5s đến sau lúc mất ~0,5s), ghi giây hiện đầu tiên và giây mất cuối cùng, rồi nới thêm ~0,05s trước và ~0,1s sau. Chữ thường bay vào/phóng to ở 1–2 khung đầu (có thể to hơn vùng chữ bình thường: thêm `blur_patches` phủ cả dải ở khoảnh khắc đó với `"delogo": false`), và khung đầu tiên sau điểm chuyển cảnh có thể vẫn còn chữ cũ.
 1. **Khung hình**: trích ~8–10 khung ở các giây khác nhau (đầu, giữa, cuối, và sát điểm logo đổi chỗ), ghép thành ảnh rồi Read. Kiểm tra: còn chữ Trung/logo không, chữ phụ đề có bị cắt mép không, dải có che sản phẩm quá không, có lúc dải trống không.
 2. **Nhận dạng ngược giọng đọc**: xuất `work/voice.wav` → mp3 → làm lại quy trình Bước 2 (ngôn ngữ Việt). So từng câu với phụ đề; kiểm tra không lẫn tiếng Trung (`language_code` phải là `vie`). Sửa câu nào bị nghe sai (tạo lại **riêng câu đó**, dựng lại).
 3. Hệ số kéo giãn từng cảnh nằm trong khoảng ~1,0–1,35.
