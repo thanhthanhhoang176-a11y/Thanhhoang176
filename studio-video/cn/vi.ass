@@ -1,0 +1,21 @@
+[Script Info]
+ScriptType: v4.00+
+WrapStyle: 2
+PlayResX: 720
+PlayResY: 1280
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: Vi,DejaVu Sans,38,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,4,0,5,10,10,0,1
+[Events]
+Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
+Dialogue: 0,0:00:00.00,0:00:02.28,Vi,,0,0,0,,{\pos(360,936)\fs38}Bé nào mà cưỡng lại được niềm vui\Ngọt gọt này chứ!
+Dialogue: 0,0:00:02.68,0:00:05.44,Vi,,0,0,0,,{\pos(360,936)\fs38}Bé nhà mình gọt cà rốt, gọt dưa leo\Nmà vui lắm luôn.
+Dialogue: 0,0:00:05.82,0:00:07.52,Vi,,0,0,0,,{\pos(360,936)\fs38}Đây là đồ chơi gọt rau củ vui nhộn.
+Dialogue: 0,0:00:07.89,0:00:09.06,Vi,,0,0,0,,{\pos(360,936)\fs38}Bé vừa ấn vừa trượt,
+Dialogue: 0,0:00:09.39,0:00:12.40,Vi,,0,0,0,,{\pos(360,936)\fs38}trượt một cái là rơi ra một lát,\Nbé thấy mới lạ và vui lắm.
+Dialogue: 0,0:00:12.81,0:00:15.80,Vi,,0,0,0,,{\pos(360,936)\fs38}Vừa chơi vừa luyện cho bé\Nphối hợp tay, mắt và não.
+Dialogue: 0,0:00:16.21,0:00:20.12,Vi,,0,0,0,,{\pos(360,936)\fs34}Gọt xong còn xếp từng miếng về lại,\Ngiúp bé luyện vận động tinh\Nvà biết tập trung.
+Dialogue: 0,0:00:20.48,0:00:23.34,Vi,,0,0,0,,{\pos(360,936)\fs38}Có cà rốt, dưa leo và cà tím\Nvới hình dáng khác nhau.
+Dialogue: 0,0:00:23.69,0:00:25.87,Vi,,0,0,0,,{\pos(360,936)\fs38}Đẩy một cái, kéo một cái là gọt xong rồi!
+Dialogue: 0,0:00:26.18,0:00:27.12,Vi,,0,0,0,,{\pos(360,936)\fs38}Chơi đã tay lắm.
+Dialogue: 0,0:00:27.49,0:00:29.97,Vi,,0,0,0,,{\pos(360,936)\fs38}Chơi xong thì cất vào hộp,\Ngọn gàng dễ dọn.
