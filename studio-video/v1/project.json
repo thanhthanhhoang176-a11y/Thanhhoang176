@@ -1,0 +1,30 @@
+{
+  "source": "source.mp4",
+  "out": "out/vi-nukied-nam-cham.mp4",
+  "voice_dir": "voices",
+  "work_dir": "work",
+  "ass": "work/subs.ass",
+  "bgm": "bgm.wav",
+  "bgm_volume": 0.14,
+  "tempo": 1.25,
+  "gap": 0.18,
+  "size": [720, 1280],
+  "shots": [[0, 2.833], [2.833, 4.367], [4.367, 7.733], [7.733, 10.7], [10.7, 12.233], [12.233, 14.4], [14.4, 16.95]],
+  "lines": [
+    "Bộ xếp hình nam châm này tiện lắm, bé mê luôn!",
+    "Nhớ sắm hai bộ cho bé nha!",
+    "Bé xếp hình cùng bạn bè, vui lại giỏi giao tiếp, biết tập trung nữa!",
+    "Nam châm lại còn mạnh nữa, xếp xong là dính chặt, không rơi đâu!",
+    "Xếp thẳng lên nắp hộp sắt luôn!",
+    "Hộp nhỏ gọn, mang đi chơi cũng tiện!",
+    "Giá lại mềm, mua là lời liền!"
+  ],
+  "split": { "2": "Bé xếp hình cùng bạn bè,", "3": "Nam châm lại còn mạnh nữa," },
+  "delogo": [
+    { "x": 10, "y": 1200, "w": 700, "h": 66, "from": 0, "to": 5.1 },
+    { "x": 12, "y": 10, "w": 110, "h": 70, "from": 4.2 },
+    { "x": 470, "y": 10, "w": 245, "h": 70, "from": 4.2 }
+  ],
+  "subtitle": { "band": { "x": 10, "y": 908, "w": 700, "h": 128, "opacity": 0.5 }, "pos": [360, 972] },
+  "credit_text": null
+}
