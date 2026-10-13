@@ -8,16 +8,16 @@ Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackC
 Style: V,DejaVu Sans,40,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,1,0,0,0,100,100,0,0,1,4,1.5,2,40,40,285,1
 [Events]
 Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
-Dialogue: 0,0:00:01.90,0:00:04.90,V,,0,0,0,,Bé biết ngồi rồi, mình\Nbỏ đồ chơi {\c&H00D7FF&}đèn nhạc{\c&HFFFFFF&} nha!
-Dialogue: 0,0:00:04.90,0:00:07.90,V,,0,0,0,,Bác sĩ nhi khuyên chọn\Nbộ {\c&H00D7FF&}cắt cắt vui{\c&HFFFFFF&},\Nbé khéo tay nè!
-Dialogue: 0,0:00:07.90,0:00:10.40,V,,0,0,0,,Bé {\c&H00D7FF&}vận động tinh{\c&HFFFFFF&} tốt\Nthường thông minh hơn nè.
-Dialogue: 0,0:00:10.40,0:00:13.40,V,,0,0,0,,Mỗi lần bé bẻ ra\Nlà {\c&H00D7FF&}vận động tinh{\c&HFFFFFF&}\Nđược tập luyện nè.
-Dialogue: 0,0:00:13.40,0:00:16.90,V,,0,0,0,,Trái cây đủ hình dạng\Ngiúp bé biết màu\Nsắc, {\c&H00D7FF&}hình khối{\c&HFFFFFF&} nữa.
-Dialogue: 0,0:00:16.90,0:00:19.40,V,,0,0,0,,Đồ bé chạm gần, đừng\Nmua hàng trôi nổi nha.
-Dialogue: 0,0:00:19.40,0:00:21.90,V,,0,0,0,,Nukied làm từ\N{\c&H00D7FF&}nguyên liệu thực vật{\c&HFFFFFF&} luôn nè.
-Dialogue: 0,0:00:21.90,0:00:23.40,V,,0,0,0,,Bé cắn cũng {\c&H00D7FF&}không sao{\c&HFFFFFF&} nè.
+Dialogue: 0,0:00:01.90,0:00:04.90,V,,0,0,0,,Bé biết ngồi rồi, mình bỏ\Nđồ chơi {\c&H00D7FF&}đèn nhạc{\c&HFFFFFF&} thôi!
+Dialogue: 0,0:00:04.90,0:00:07.90,V,,0,0,0,,Bác sĩ nhi khuyên chọn\Nbộ {\c&H00D7FF&}Cắt hoa quả{\c&HFFFFFF&},\Ngiúp bé khéo tay.
+Dialogue: 0,0:00:07.90,0:00:10.40,V,,0,0,0,,Bé {\c&H00D7FF&}vận động tinh{\c&HFFFFFF&} tốt\Nthường thông minh hơn.
+Dialogue: 0,0:00:10.40,0:00:13.40,V,,0,0,0,,Mỗi lần bé tách bẻ\Nlà {\c&H00D7FF&}vận động tinh{\c&HFFFFFF&}\Nđược tập luyện.
+Dialogue: 0,0:00:13.40,0:00:16.90,V,,0,0,0,,Trái cây đủ hình dạng\Ngiúp bé biết màu\Nsắc, {\c&H00D7FF&}hình khối{\c&HFFFFFF&}.
+Dialogue: 0,0:00:16.90,0:00:19.40,V,,0,0,0,,Đồ bé hay chạm vào, đừng\Nmua hàng trôi nổi nhé.
+Dialogue: 0,0:00:19.40,0:00:21.90,V,,0,0,0,,Nukied làm từ\N{\c&H00D7FF&}nguyên liệu thực vật{\c&HFFFFFF&} đó.
+Dialogue: 0,0:00:21.90,0:00:23.40,V,,0,0,0,,Bé ngậm cũng {\c&H00D7FF&}không sao{\c&HFFFFFF&}.
 Dialogue: 0,0:00:23.40,0:00:25.40,V,,0,0,0,,Còn giúp bé làm quen\N{\c&H00D7FF&}rau củ quả{\c&HFFFFFF&} nữa.
-Dialogue: 0,0:00:25.40,0:00:27.90,V,,0,0,0,,Chơi xong, mình cùng\Nbé cất gọn nha.
-Dialogue: 0,0:00:27.90,0:00:29.90,V,,0,0,0,,Lớn hơn xíu còn chơi\N{\c&H00D7FF&}đồ hàng{\c&HFFFFFF&} được nè.
-Dialogue: 0,0:00:29.90,0:00:31.90,V,,0,0,0,,Chơi tới {\c&H00D7FF&}ba tuổi{\c&HFFFFFF&}\Nvẫn ổn luôn nha!
+Dialogue: 0,0:00:25.40,0:00:27.90,V,,0,0,0,,Chơi xong, mình cùng\Nbé cất gọn nhé.
+Dialogue: 0,0:00:27.90,0:00:29.90,V,,0,0,0,,Lớn hơn xíu còn chơi\N{\c&H00D7FF&}đồ hàng{\c&HFFFFFF&} được nữa.
+Dialogue: 0,0:00:29.90,0:00:31.90,V,,0,0,0,,Chơi tới {\c&H00D7FF&}ba, bốn tuổi{\c&HFFFFFF&}\Nvẫn ổn luôn!
 Dialogue: 0,0:00:32.00,0:00:35.40,V,,0,0,0,,Hãy {\c&H00D7FF&}subscribe{\c&HFFFFFF&} cho kênh\NGhiền Mì Gõ để không bỏ lỡ\Nnhững video hấp dẫn.
