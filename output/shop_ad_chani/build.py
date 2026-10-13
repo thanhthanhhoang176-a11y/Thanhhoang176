@@ -205,8 +205,8 @@ def scene_logo(t, tv):
     paste_rgba(img, card, W // 2, 700, -2 * (1 - pop(tv, t0, 0.6)) * 8)
     d = ImageDraw.Draw(img)
     bursts(d, tv, t0 + 0.1, W // 2, 700, 560, 12, 1.0)
-    chip(d, W // 2, 1110, "ĐỒ CHƠI GIÁO DỤC CHÍNH HÃNG", 40, GREEN, WHITE, pop(tv, t0 + 1.0, 0.5), 50)
-    chip(d, W // 2, 1230, "In dấu tuổi thơ con", 44, ORANGE, WHITE, pop(tv, t0 + 1.4, 0.5), 60)
+    chip(d, W // 2, 1140, "ĐỒ CHƠI GIÁO DỤC CHÍNH HÃNG", 40, GREEN, WHITE, pop(tv, t0 + 1.0, 0.5), 50)
+    chip(d, W // 2, 1260, "In dấu tuổi thơ con", 44, ORANGE, WHITE, pop(tv, t0 + 1.4, 0.5), 60)
     return img
 
 
