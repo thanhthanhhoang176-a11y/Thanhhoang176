@@ -1,5 +1,4 @@
 import json,subprocess,textwrap
-M="m/vi/vi_VN/vais1000/medium/vi_VN-vais1000-medium.onnx"
 S=[ # start,end, 中文, tiếng Việt, từ khóa tô màu
 (1.9,4.9,"宝宝会坐以后，就不要玩这些声光电玩具了","Bé biết ngồi rồi, mình bỏ đồ chơi đèn nhạc nha!",["đèn nhạc"]),
 (4.9,7.9,"儿保建议换成切切乐这种能培养动手能力的","Bác sĩ nhi khuyên chọn bộ cắt cắt vui, bé khéo tay nè!",["cắt cắt vui"]),
@@ -15,12 +14,11 @@ S=[ # start,end, 中文, tiếng Việt, từ khóa tô màu
 (29.9,31.9,"一直玩到3岁都没问题","Chơi tới ba tuổi vẫn ổn luôn nha!",["ba tuổi"]),
 (32.0,35.4,"(câu kết thêm theo yêu cầu)","Hãy subscribe cho kênh Ghiền Mì Gõ để không bỏ lỡ những video hấp dẫn.",["subscribe"]),
 ]
-json.dump(S,open("script.json","w"),ensure_ascii=False)
+# lời đọc: "Nukied" -> "Nu kít"; mp3 sinh từ ElevenLabs voice Xq6JCnPKC1WM8ONUXMCJ, model eleven_multilingual_v2
 def dur(f): return float(subprocess.check_output(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",f]))
 ins=[];fl=[]
 for i,(a,b,zh,vi,k) in enumerate(S):
-    subprocess.run(["python3","-I","-m","piper","-m",M,"--length-scale","0.92","-f",f"v{i}.wav"],input=vi.replace('Nukied','Nu kít').encode(),capture_output=True,check=True)
-    subprocess.run(["ffmpeg","-y","-loglevel","error","-i",f"v{i}.wav","-af","asetrate=22050*1.10,aresample=22050,treble=g=3",f"v{i}b.wav"],check=True)
+    subprocess.run(["ffmpeg","-y","-loglevel","error","-i",f"e{i}.mp3","-ar","22050","-ac","1",f"v{i}b.wav"],check=True)  # giọng ElevenLabs (Nhi, miền Nam), tạo sẵn e{i}.mp3
     r=max(1.0,dur(f"v{i}b.wav")/(b-a-0.08));print(i,round(r,2),vi)
     assert r<=1.35
     ins+=["-i",f"v{i}b.wav"];fl.append(f"[{i+2}:a]atempo={r:.3f},aresample=44100,pan=stereo|c0=c0|c1=c0,adelay={int(a*1000)}|{int(a*1000)}[d{i}]")

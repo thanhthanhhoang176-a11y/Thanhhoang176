@@ -17,3 +17,8 @@ Việc cần làm: thay giọng Piper bằng giọng nữ ElevenLabs (tiếng Vi
 Khóa ElevenLabs nằm ở "network secret" của môi trường (header `xi-api-key`, host `api.elevenlabs.io`): gọi API không cần tự thêm khóa.
 Cách đọc "Nukied": "Nu kít" (chờ người dùng xác nhận). Phụ đề vẫn ghi "Nukied".
 Yêu cầu giữ nguyên hiệu ứng âm thanh gốc (nền `inst.wav` x2.2, ducking nhẹ).
+
+## Cập nhật: đã lồng tiếng ElevenLabs
+- Giọng: "Nhi" (nữ miền Nam, id `Xq6JCnPKC1WM8ONUXMCJ`), model `eleven_multilingual_v2`, đọc "Nu kít" cho Nukied. Từng câu lưu `e0.mp3`…`e12.mp3`.
+- `build.py` giờ đọc `e*.mp3` (không còn Piper) rồi tạo `mix.wav`, `vi.ass`, `vi.srt`; `final.mp4` dựng bằng lệnh ffmpeg ở trên (35,54 s).
+- Chưa nghe thử bằng tai; cần người dùng xác nhận giọng và cách đọc "Nu kít".
