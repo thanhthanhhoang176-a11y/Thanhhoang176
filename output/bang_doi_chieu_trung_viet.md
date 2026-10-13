@@ -12,3 +12,4 @@
 | 10 | 00:25.40 - 00:27.90 | 不玩的时候就和宝宝一起收纳起来 | Chơi xong, cùng bé cất gọn nhé. |
 | 11 | 00:27.90 - 00:29.90 | 宝宝大一点以后还可以用来过家家 | Lớn hơn chút còn chơi đồ hàng được. |
 | 12 | 00:29.90 - 00:31.90 | 一直玩到3岁都没问题 | Chơi đến ba tuổi vẫn ổn! |
+| 13 | 00:32.00 - 00:35.40 | (câu kết thêm theo yêu cầu) | Hãy subscribe cho kênh Ghiền Mì Gõ để không bỏ lỡ những video hấp dẫn. |

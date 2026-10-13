@@ -1,12 +1,14 @@
 1
 00:00:01,900 --> 00:00:04,900
-Bé biết ngồi rồi, đừng chơi
-đồ chơi đèn nhạc nữa nhé!
+Bé biết ngồi rồi, đừng
+chơi đồ chơi đèn
+nhạc nữa nhé!
 
 2
 00:00:04,900 --> 00:00:07,900
-Bác sĩ nhi khuyên chọn đồ chơi
-cắt cắt vui, rèn tay khéo léo!
+Bác sĩ nhi khuyên chọn
+đồ chơi cắt cắt vui,
+rèn tay khéo léo!
 
 3
 00:00:07,900 --> 00:00:10,400
@@ -15,13 +17,15 @@ thường thông minh hơn.
 
 4
 00:00:10,400 --> 00:00:13,400
-Mỗi lần bé bẻ ra, vận động tinh
-đều được luyện tập!
+Mỗi lần bé bẻ ra,
+vận động tinh đều
+được luyện tập!
 
 5
 00:00:13,400 --> 00:00:16,900
-Trái cây nhiều hình dạng giúp bé
-nhận biết màu sắc, hình khối.
+Trái cây nhiều hình dạng
+giúp bé nhận biết
+màu sắc, hình khối.
 
 6
 00:00:16,900 --> 00:00:19,400
@@ -55,3 +59,9 @@ chơi đồ hàng được.
 12
 00:00:29,900 --> 00:00:31,900
 Chơi đến ba tuổi vẫn ổn!
+
+13
+00:00:32,000 --> 00:00:35,400
+Hãy subscribe cho kênh
+Ghiền Mì Gõ để không bỏ lỡ
+những video hấp dẫn.
