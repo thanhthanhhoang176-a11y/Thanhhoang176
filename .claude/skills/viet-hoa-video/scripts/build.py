@@ -91,14 +91,39 @@ Style: Vi,{FONT_NAME},38,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,1,0,0,0,100
 Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
 {ev}""")
 
-# 3) Hình: che logo (delogo theo cửa sổ thời gian GỐC) + dải mờ che phụ đề cũ, rồi kéo giãn từng cảnh
-f = "[0:v]"
-for d in cfg.get("delogo", []):
-    en = f"between(t,{d.get('from', 0)},{d.get('to', 9999)})"
-    f += f"delogo=x={d['x']}:y={d['y']}:w={d['w']}:h={d['h']}:enable='{en}',"
+# 3) Hình: che logo (delogo theo cửa sổ thời gian GỐC), thay tấm chữ trang trí bằng chữ Việt, dải mờ che phụ đề cũ,
+#    rồi kéo giãn từng cảnh
+stages = []
+dl = [f"delogo=x={d['x']}:y={d['y']}:w={d['w']}:h={d['h']}:enable='between(t,{d.get('from', 0)},{d.get('to', 9999)})'" for d in cfg.get("delogo", [])]
+stages.append("[0:v]" + (",".join(dl) if dl else "null") + "[v0]")
+cur = "v0"
+for k, bp in enumerate(cfg.get("blur_patches", [])):
+    # làm mờ mềm một vùng trong một khoảng thời gian (mượt hơn delogo trên nền nhiều chi tiết)
+    en = f"between(t,{bp.get('from', 0)},{bp.get('to', 9999)})"
+    if bp.get("delogo", True):   # xoá logo bằng nội suy trước, rồi làm mờ để hết sọc
+        stages.append(f"[{cur}]delogo=x={bp['x']}:y={bp['y']}:w={bp['w']}:h={bp['h']}:enable='{en}'[pd{k}]")
+        cur = f"pd{k}"
+    stages.append(
+        f"[{cur}]split=2[pa{k}][pb{k}];[pb{k}]crop={bp['w']}:{bp['h']}:{bp['x']}:{bp['y']},boxblur={bp.get('radius', 18)}:3[pc{k}];"
+        f"[pa{k}][pc{k}]overlay={bp['x']}:{bp['y']}:enable='{en}'[p{k}x]")
+    cur = f"p{k}x"
+for k, st in enumerate(cfg.get("stickers", [])):
+    # tấm chữ trang trí tiếng Trung -> vùng mờ + khung tối + chữ Việt ở giữa
+    bl, pl = st["blur"], st["pill"]
+    en = f"between(t,{st['from']},{st['to']})"
+    txt = st["text"].replace("'", "").replace(":", " ")
+    stages.append(
+        f"[{cur}]split=2[sa{k}][sb{k}];[sb{k}]crop={bl['w']}:{bl['h']}:{bl['x']}:{bl['y']},boxblur=25:3[sc{k}];"
+        f"[sa{k}][sc{k}]overlay={bl['x']}:{bl['y']}:enable='{en}',"
+        f"drawbox=x={pl['x']}:y={pl['y']}:w={pl['w']}:h={pl['h']}:color=black@0.45:t=fill:enable='{en}',"
+        f"drawtext=fontfile={FONT}:text='{txt}':fontsize={st.get('size', 44)}:fontcolor={st.get('color', 'white')}:borderw=3:bordercolor=black@0.7:"
+        f"x={pl['x']}+({pl['w']}-text_w)/2:y={pl['y']}+({pl['h']}-text_h)/2:enable='{en}'[s{k}x]")
+    cur = f"s{k}x"
 b = BAND
-f += (f"split=2[base][bl];[bl]crop={b['w']}:{b['h']}:{b['x']}:{b['y']},boxblur=20:3[blur];"
-      f"[base][blur]overlay={b['x']}:{b['y']},drawbox=x={b['x']}:y={b['y']}:w={b['w']}:h={b['h']}:color=black@{b.get('opacity', 0.5)}:t=fill[clean]")
+stages.append(
+    f"[{cur}]split=2[base][bl];[bl]crop={b['w']}:{b['h']}:{b['x']}:{b['y']},boxblur=20:3[blur];"
+    f"[base][blur]overlay={b['x']}:{b['y']},drawbox=x={b['x']}:y={b['y']}:w={b['w']}:h={b['h']}:color=black@{b.get('opacity', 0.5)}:t=fill[clean]")
+f = ";".join(stages)
 chain = f + f";[clean]split={N}" + "".join(f"[c{i}]" for i in range(N))
 for i, (a, e) in enumerate(SHOTS):
     chain += f";[c{i}]trim={a}:{e},setpts=(PTS-STARTPTS)*{D[i]/(e-a):.5f},fps=30[s{i}]"
