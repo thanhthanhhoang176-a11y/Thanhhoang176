@@ -19,7 +19,7 @@ GAP = cfg.get("gap", 0.18)              # nghỉ giữa các câu (giây)
 SHOTS = cfg["shots"]                    # [[bắt_đầu, kết_thúc], ...] theo giây của video gốc
 LINES = cfg["lines"]                    # đúng 1 câu / cảnh
 VOICE = P(cfg["voice_dir"])             # chứa t1.wav ... tN.wav (đã cắt lặng, giọng chưa tăng tốc)
-SPLIT = {int(k): v for k, v in cfg.get("split", {}).items()}   # {chỉ_số_cảnh: "đoạn đầu,"}
+SPLIT = {int(k): ([v] if isinstance(v, str) else v) for k, v in cfg.get("split", {}).items()}   # {chỉ_số_cảnh: "đoạn đầu," hoặc ["đoạn 1,", "đoạn 2,"]}
 SUB = cfg.get("subtitle", {})
 BAND = SUB.get("band", {"x": 10, "y": 893, "w": 700, "h": 94, "opacity": 0.5})
 FONT = SUB.get("font", "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf")
@@ -73,9 +73,17 @@ def cue(a, b, t):
 ev = ""
 for i, t in enumerate(LINES):
     if i in SPLIT:
-        p1 = SPLIT[i]; p2 = t[len(p1):].strip()
-        mid = starts[i] + 0.04 + speech[i] * len(p1.split()) / len(t.split()) + GAP / 2
-        ev += cue(starts[i], mid, p1) + cue(mid, starts[i + 1], p2)
+        # tách câu dài thành nhiều cue nối tiếp, thời gian chia theo số từ
+        parts, rest = [], t
+        for p in SPLIT[i]:
+            assert rest.startswith(p), f"đoạn tách không khớp: {p}"
+            parts.append(p); rest = rest[len(p):].strip()
+        if rest: parts.append(rest)
+        total_w = len(t.split()); acc = 0; a0 = starts[i]
+        for j, p in enumerate(parts):
+            acc += len(p.split())
+            a1 = starts[i + 1] if j == len(parts) - 1 else starts[i] + 0.04 + speech[i] * acc / total_w + GAP / 2
+            ev += cue(a0, a1, p); a0 = a1
     else:
         ev += cue(starts[i], starts[i + 1], t)
 ass = P(cfg.get("ass", "subs.ass"))
@@ -104,7 +112,7 @@ for k, bp in enumerate(cfg.get("blur_patches", [])):
         stages.append(f"[{cur}]delogo=x={bp['x']}:y={bp['y']}:w={bp['w']}:h={bp['h']}:enable='{en}'[pd{k}]")
         cur = f"pd{k}"
     stages.append(
-        f"[{cur}]split=2[pa{k}][pb{k}];[pb{k}]crop={bp['w']}:{bp['h']}:{bp['x']}:{bp['y']},boxblur={bp.get('radius', 18)}:3[pc{k}];"
+        f"[{cur}]split=2[pa{k}][pb{k}];[pb{k}]crop={bp['w']}:{bp['h']}:{bp['x']}:{bp['y']},boxblur={min(bp.get('radius', 18), max(1, min(bp['w'], bp['h']) // 4 - 1))}:3[pc{k}];"
         f"[pa{k}][pc{k}]overlay={bp['x']}:{bp['y']}:enable='{en}'[p{k}x]")
     cur = f"p{k}x"
 for k, st in enumerate(cfg.get("stickers", [])):
@@ -113,7 +121,7 @@ for k, st in enumerate(cfg.get("stickers", [])):
     en = f"between(t,{st['from']},{st['to']})"
     txt = st["text"].replace("'", "").replace(":", " ")
     stages.append(
-        f"[{cur}]split=2[sa{k}][sb{k}];[sb{k}]crop={bl['w']}:{bl['h']}:{bl['x']}:{bl['y']},boxblur=25:3[sc{k}];"
+        f"[{cur}]split=2[sa{k}][sb{k}];[sb{k}]crop={bl['w']}:{bl['h']}:{bl['x']}:{bl['y']},boxblur={min(25, max(1, min(bl['w'], bl['h']) // 4 - 1))}:3[sc{k}];"
         f"[sa{k}][sc{k}]overlay={bl['x']}:{bl['y']}:enable='{en}',"
         f"drawbox=x={pl['x']}:y={pl['y']}:w={pl['w']}:h={pl['h']}:color=black@0.45:t=fill:enable='{en}',"
         f"drawtext=fontfile={FONT}:text='{txt}':fontsize={st.get('size', 44)}:fontcolor={st.get('color', 'white')}:borderw=3:bordercolor=black@0.7:"

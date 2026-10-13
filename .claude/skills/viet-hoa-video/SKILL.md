@@ -93,6 +93,14 @@ Hỏi người dùng có muốn thêm lời kêu gọi cuối (tên shop, giá, 
 - Khi mốc kích thước file nhập vào `creative_create_asset_upload` sai dù chỉ vài byte, URL tải sẽ không dùng được: lấy đúng bằng `stat -c %s`, nhập lại, tạo upload mới.
 - Phiên khác có thể đã đẩy commit lên cùng nhánh: nếu `git push` bị từ chối, `git pull --no-rebase` rồi push lại.
 
+## Bài học thêm từ video thứ ba (xe lửa domino, 42s, 12 cảnh)
+- Từ dễ nghe nhầm ở giọng đọc: "như **ng**ăn kéo" nghe thành "nhưng **ăn** kéo" (âm "ng" bị nuốt). Tránh các từ bắt đầu bằng "ng"/"tr" nằm sau từ kết thúc bằng "ư/u"; luôn nhận dạng ngược để bắt lỗi.
+- Câu rất dài: `split` nhận cả danh sách ["đoạn 1,", "đoạn 2,"] để tách nhiều cue; cue 2 dòng vẫn phải đủ lớn (cỡ chữ ≥ 36).
+- Hai tấm chữ chồng cùng một vùng (ví dụ "✅直线" và "✅弯线"): tấm thứ hai chỉ cho `blur` đúng vùng khung chữ của nó, nếu không sẽ làm mờ luôn khung chữ của tấm thứ nhất.
+- Logo nền tảng chuyển chỗ muộn hơn mốc chuyển cảnh gần nhất (ở đây ~4,95s trong khi cảnh đổi ở 4,2s): lấy mẫu 0,1s quanh điểm chuyển.
+- Kết quả `creative_get_flow_run_status` nhiều câu rất dài: nó tự lưu ra file; đọc `content_url` bằng python/jq rồi tải về, đừng in ra.
+- Kiểm tra nhanh một câu đã sửa: chỉ tải riêng câu đó (~35 credit) thay vì cả bài (~240 credit).
+
 ## Chi phí tham khảo (credit ElevenLabs)
 Scribe ~150–165/lần; giọng ~40–80/câu; một video 9 cảnh ~500 + 1–2 lần kiểm tra ngược ~330. Tạo lại câu lỗi ~50–70.
 
