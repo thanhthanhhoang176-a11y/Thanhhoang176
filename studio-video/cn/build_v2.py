@@ -83,9 +83,9 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
 {ev}""")
 
 # 3) hình: che logo/chữ Trung ở thời gian gốc, rồi kéo giãn từng cảnh
-src = ("[0:v]delogo=x=10:y=1205:w=700:h=62:enable='lt(t,4.2)',"
-       "delogo=x=12:y=10:w=110:h=70:enable='gte(t,3.0)',"
-       "delogo=x=470:y=10:w=245:h=70:enable='gte(t,3.0)',"
+src = ("[0:v]delogo=x=10:y=1205:w=700:h=62:enable='lt(t,5.1)',"
+       "delogo=x=12:y=10:w=110:h=70:enable='gte(t,5.1)',"
+       "delogo=x=470:y=10:w=245:h=70:enable='gte(t,5.1)',"
        "split=2[base][bl];[bl]crop=700:94:10:893,boxblur=20:3[blur];"
        "[base][blur]overlay=10:893,drawbox=x=10:y=893:w=700:h=94:color=black@0.5:t=fill[clean]")
 parts=[]; names=[]
@@ -97,8 +97,7 @@ for i,(a,b) in enumerate(SHOTS):
     chain += f";[c{i}]trim={a}:{b},setpts=(PTS-STARTPTS)*{f:.5f},fps=30[s{i}]"
     names.append(f"[s{i}]")
 chain += f";{''.join(names)}concat=n={n}:v=1:a=0[cat]"
-chain += (";[cat]drawtext=fontfile=%s:text='Nukied':fontsize=30:fontcolor=white:borderw=2:bordercolor=black@0.6:x=w-tw-26:y=26,"
-          "ass=vi2.ass[v]" % FONT)
+chain += ";[cat]ass=vi2.ass[v]"
 sh("ffmpeg","-loglevel","error","-y","-i","source.mp4","-i","v2/voice.wav","-i","bgm.wav",
    "-filter_complex", chain + f";[2:a]atrim=0:{total:.2f},volume=0.14,afade=t=out:st={total-1.6:.2f}:d=1.6[m];[1:a][m]amix=inputs=2:duration=first:normalize=0[a]",
    "-map","[v]","-map","[a]","-t",f"{total:.2f}","-c:v","libx264","-preset","medium","-crf","20","-pix_fmt","yuv420p","-c:a","aac","-b:a","160k","vi-nukied-v2.mp4")
