@@ -1,0 +1,32 @@
+{
+  "source": "source.mp4",
+  "out": "out/vi-nukied-test.mp4",
+  "voice_dir": "v2",
+  "work_dir": "work",
+  "ass": "work/subs.ass",
+  "bgm": "bgm.wav",
+  "bgm_volume": 0.14,
+  "tempo": 1.25,
+  "gap": 0.18,
+  "size": [720, 1280],
+  "shots": [[0, 2.267], [2.267, 5.2], [5.2, 8.4], [8.4, 11.433], [11.433, 14.267], [14.267, 18.067], [18.067, 20.833], [20.833, 23.467], [23.467, 25.8]],
+  "lines": [
+    "Cắt lát rau củ vui thế này, bé nào mà không mê!",
+    "Bé nhà mình cắt cà rốt, cắt dưa leo mà vui lắm luôn!",
+    "Đồ chơi này đơn giản lắm, bé chỉ cần ấn xuống rồi trượt qua trượt lại,",
+    "là từng lát rơi ra liền, bé thấy mới lạ và thích mê!",
+    "Vừa chơi vừa rèn cho bé nhanh tay, nhanh mắt, nhanh trí nữa đó!",
+    "Cắt xong, bé tự xếp các lát vào hộp, giúp bé khéo tay và biết tập trung hơn.",
+    "Bộ có cà rốt, dưa leo và cà tím, hình dáng đáng yêu lắm.",
+    "Chỉ cần đẩy tới, kéo lui là cắt xong ngay!",
+    "Chơi đã tay mà dọn cũng dễ, cất vào hộp là gọn!"
+  ],
+  "split": { "2": "Đồ chơi này đơn giản lắm," },
+  "delogo": [
+    { "x": 10, "y": 1205, "w": 700, "h": 62, "from": 0, "to": 5.1 },
+    { "x": 12, "y": 10, "w": 110, "h": 70, "from": 5.1 },
+    { "x": 470, "y": 10, "w": 245, "h": 70, "from": 5.1 }
+  ],
+  "subtitle": { "band": { "x": 10, "y": 893, "w": 700, "h": 94, "opacity": 0.5 }, "pos": [360, 940] },
+  "credit_text": null
+}
