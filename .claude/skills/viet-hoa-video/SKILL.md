@@ -104,6 +104,12 @@ Hỏi người dùng có muốn thêm lời kêu gọi cuối (tên shop, giá, 
 - Kết quả `creative_get_flow_run_status` nhiều câu rất dài: nó tự lưu ra file; đọc `content_url` bằng python/jq rồi tải về, đừng in ra.
 - Kiểm tra nhanh một câu đã sửa: chỉ tải riêng câu đó (~35 credit) thay vì cả bài (~240 credit).
 
+## Bài học thêm từ video thứ tư (bộ vặn vít, 28,6s, 16 cảnh)
+- Quy trình gọn (~35 phút làm việc, ít ảnh): `inspect_video.sh` + **một** bảng khung, rồi dò **logo và tấm chữ bằng mã** (không xem nhiều ảnh): badge trắng "小红书" ở góc trên-trái (x18–122,y18–68) cho biết lúc logo lên đỉnh; nút trắng đáy-phải (x600–705,y1205–1262) cho biết lúc logo còn ở đáy. Ở cả 3 video có logo, mốc chuyển là **4,95s**.
+- `scan_leftovers.py ... --no-orange` khi đồ chơi trong video màu cam/đỏ (máy khoan, tua vít...) để khỏi báo nhầm.
+- Nhận dạng lời gốc có thể sai vài chữ (ví dụ 拧进拧出 → "女进女出", tên bé 艺晨 → "一橙"): luôn đối chiếu **chữ in sẵn trên hình** khi viết lời Việt.
+- Cuộc trò chuyện làm nhiều video: mở phiên mới cho mỗi video, vì mỗi tin nhắn đọc lại toàn bộ lịch sử (đã thấy hạn mức tuần tăng ~16% chỉ sau vài giờ ở phiên rất dài).
+
 ## Chi phí tham khảo (credit ElevenLabs)
 Scribe ~150–165/lần; giọng ~40–80/câu; một video 9 cảnh ~500 + 1–2 lần kiểm tra ngược ~330. Tạo lại câu lỗi ~50–70.
 
