@@ -53,6 +53,7 @@ Viết **lại**, không dịch sát chữ. Mỗi cảnh một câu. Quy tắc r
 - Ghi bảng song ngữ vào `loi-thoai.md` (giây | tiếng gốc | tiếng Việt).
 
 ## Bước 4. Tạo giọng (ElevenLabs)
+- **GIỌNG MẶC ĐỊNH CỦA NGƯỜI DÙNG: Thùy Dương `MfXXiGR0HCVHHuMqcUJM`** (người dùng đã chốt, không hỏi lại; chỉ đổi khi họ yêu cầu).
 - Chọn giọng bằng `creative_list_voices` (languages `["vi"]`). Đã dùng tốt: **Chi** `5yEPTrA0uAhZsBEhHjfi` (trẻ, tươi, hợp quảng cáo ngắn); **Cô Giang** `BNdqbMgt3iZONYMkKMzH` (cô giáo, dịu dàng, hợp video dạy bé). Nói với người dùng giọng đã chọn.
 - Mô hình `eleven_v4`. **Tạo từng câu riêng** (`creative_generate_speech`, `generations_count: 1`, cùng `flow_id`), gọi song song cả loạt trong một lượt. Cách này cho thời lượng từng câu chính xác, dễ sửa 1 câu mà không tạo lại cả bài. ~40–80 credit/câu.
 - Poll `creative_get_flow_run_status` với tất cả session_ids; tải `content_url` bằng curl thành `voices/s1.mp3 … sN.mp3`.
