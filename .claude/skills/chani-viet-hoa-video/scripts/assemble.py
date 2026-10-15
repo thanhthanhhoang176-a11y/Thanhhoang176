@@ -64,7 +64,7 @@ BADGE_POS = "0:0" if CH.get("badge_pos") == "left" else "W-w-34:34"   # "left": 
 lg = logo.resize((LW, round(LW * logo.height / logo.width)), Image.LANCZOS)
 pad = 14
 badge = Image.new("RGBA", (lg.width + 2 * pad, lg.height + 2 * pad), (0, 0, 0, 0))
-ImageDraw.Draw(badge).rounded_rectangle([0, 0, badge.width - 1, badge.height - 1], 24, fill=(255, 255, 255, 215))
+ImageDraw.Draw(badge).rounded_rectangle([0, 0, badge.width - 1, badge.height - 1], 24, fill=(255, 255, 255, 255 if CH.get("badge_pos") == "left" else 215))
 badge.alpha_composite(lg, (pad, pad)); badge.save("work/logo_badge.png")
 
 # 4) Màn kết: logo lớn + CTA
@@ -105,6 +105,9 @@ with open(f"out/chanis_house_{SLUG}_vi.srt", "w") as fh:
 t_hero = next(a for a, b, t in cues if t.startswith(CH["hero_cue"])) + 0.7
 run("ffmpeg", "-loglevel", "error", "-y", "-ss", f"{t_hero:.2f}", "-i", "out/nosubs.mp4", "-frames:v", "1", "-vf", "scale=1080:1920:flags=lanczos", "work/hero.png")
 im = Image.open("work/hero.png").convert("RGBA")
+if CH.get("thumb_zoom"):                      # phóng ~12% và bỏ mép trên (dải đen, vệt che logo) của khung hình
+    im = im.crop((60, 125, 1020, 1285)).resize((1080, 1305), Image.LANCZOS).crop((0, 0, 1080, 1285))
+    im = im.crop((0, 0, 1080, 1285)); canvas = Image.new("RGBA", (1080, 1920), (255, 247, 234, 255)); canvas.alpha_composite(im, (0, 0)); im = canvas
 panel = Image.new("RGBA", im.size, (0, 0, 0, 0)); pd = ImageDraw.Draw(panel)
 pd.rectangle([0, 1285, 1080, 1920], fill=(255, 247, 234, 255))
 im = Image.alpha_composite(im, panel); d = ImageDraw.Draw(im)
@@ -118,7 +121,7 @@ for line in [CH["thumb_sub"]]:
 TW = LW + 60 if CH.get("badge_pos") == "left" else 250
 tl = logo.resize((TW, round(TW * logo.height / logo.width)), Image.LANCZOS)
 plate = Image.new("RGBA", (tl.width + 28, tl.height + 28), (0, 0, 0, 0))
-ImageDraw.Draw(plate).rounded_rectangle([0, 0, plate.width - 1, plate.height - 1], 28, fill=(255, 255, 255, 225)); plate.alpha_composite(tl, (14, 14))
+ImageDraw.Draw(plate).rounded_rectangle([0, 0, plate.width - 1, plate.height - 1], 28, fill=(255, 255, 255, 255 if CH.get("badge_pos") == "left" else 225)); plate.alpha_composite(tl, (14, 14))
 im.alpha_composite(plate, (0, 0) if CH.get("badge_pos") == "left" else (1080 - plate.width - 40, 40))
 im.convert("RGB").save(f"out/thumbnail_chanis_house_{SLUG}.jpg", quality=93)
 print("Thumbnail xong; hero t =", round(t_hero, 2))
