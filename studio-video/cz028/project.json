@@ -128,7 +128,7 @@
       360,
       997
     ],
-    "font": "/home/user/Thanhhoang176/studio-video/cz028/assets/fonts/Nunito-700.ttf",
+    "font": "../../.claude/skills/chani-viet-hoa-video/assets/fonts/Nunito-700.ttf",
     "font_name": "Nunito",
     "sizes": [
       42,
@@ -148,5 +148,16 @@
       "to": 5.1,
       "radius": 18
     }
-  ]
+  ],
+  "chani": {
+    "slug": "cz028",
+    "thumb_title": [
+      "ĐỒ CHƠI VẶN",
+      "ỐC VÍT CHO BÉ"
+    ],
+    "thumb_sub": "Tháo lắp mô hình · Có khoan điện mini",
+    "hero_cue": "Nhiều chi tiết",
+    "cta_text": "Khám phá thêm tại Chani's House nha!",
+    "cta_voice": "voices/s17.mp3"
+  }
 }
