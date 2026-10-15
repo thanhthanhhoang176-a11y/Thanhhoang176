@@ -8,7 +8,9 @@ from PIL import Image, ImageDraw, ImageFont
 
 HERE = os.path.abspath(sys.argv[1])
 SK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))          # thư mục skill chani-viet-hoa-video
-SKILL = os.path.join(os.path.dirname(os.path.dirname(SK)), "skills/viet-hoa-video/scripts/build.py")
+SKILL = os.path.join(SK, "scripts/viet-hoa/build.py")                  # bản đóng gói riêng (upload lên tài khoản)
+if not os.path.exists(SKILL):                                             # bản trong repo: skill viet-hoa-video nằm cạnh
+    SKILL = os.path.join(os.path.dirname(SK), "viet-hoa-video/scripts/build.py")
 ASSETS = os.path.join(SK, "assets")
 os.chdir(HERE)
 import json, shutil
@@ -38,7 +40,7 @@ src = open(SKILL).read()
 assert "ass={ass}[v]" in src
 open("work/build_nosubs.py", "w").write(src.replace("ass={ass}[v]", "null[v]"))
 import json
-cfg = json.load(open("project.json")); cfg["out"] = "out/nosubs.mp4"; cfg["ass"] = "work/_unused.ass"
+cfg = json.load(open("project.json")); cfg["out"] = "out/nosubs.mp4"; cfg.setdefault("subtitle", {})["font"] = FONT_M; cfg["ass"] = "work/_unused.ass"
 json.dump(cfg, open("work/project_nosubs.json", "w"), ensure_ascii=False)
 # giữ nguyên đường dẫn tương đối: project phải nằm cùng thư mục gốc
 os.replace("work/project_nosubs.json", "project_nosubs.json")
