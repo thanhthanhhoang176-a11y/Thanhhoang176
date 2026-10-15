@@ -57,7 +57,8 @@ open("work/subs1080.ass", "w").write(ass)
 # 3) Huy hiệu logo (logo gốc, không đổi màu/hình; chỉ đặt trên nền trắng mờ để dễ đọc)
 logo = Image.open(f"{ASSETS}/logo_chani.png").convert("RGBA")
 logo = logo.crop(logo.getchannel("A").getbbox())
-LW = 190
+LW = CH.get("badge_w", 190)                         # độ rộng logo trong huy hiệu
+BADGE_POS = "0:0" if CH.get("badge_pos") == "left" else "W-w-34:34"   # "left": góc trên trái (che sticker nền gốc nếu có)
 lg = logo.resize((LW, round(LW * logo.height / logo.width)), Image.LANCZOS)
 pad = 14
 badge = Image.new("RGBA", (lg.width + 2 * pad, lg.height + 2 * pad), (0, 0, 0, 0))
@@ -79,7 +80,7 @@ card.save("work/outro.png")
 run("ffmpeg", "-loglevel", "error", "-y", "-i", CTA_VOICE, "-af",
     "silenceremove=start_periods=1:start_threshold=-40dB:start_silence=0.05,areverse,silenceremove=start_periods=1:start_threshold=-40dB:start_silence=0.05,areverse,atempo=1.1",
     "-ar", "44100", "-ac", "1", "work/cta.wav")
-fc = (f"[0:v]scale=1080:1920:flags=lanczos,ass=work/subs1080.ass[v0];[v0][3:v]overlay=W-w-34:34[vm];"
+fc = (f"[0:v]scale=1080:1920:flags=lanczos,ass=work/subs1080.ass[v0];[v0][3:v]overlay={BADGE_POS}[vm];"
       f"[1:v]fps=30,format=yuv420p,fade=t=in:st=0:d=0.5[vo];[vm]fps=30[vm2];[vm2][vo]concat=n=2:v=1:a=0[v];"
       f"[2:a]adelay=350|350,apad=whole_dur={OUTRO},atrim=0:{OUTRO}[ca];"
       f"[4:a]atrim=0:{OUTRO},volume=0.14,afade=t=in:d=0.4,afade=t=out:st={OUTRO-1.2}:d=1.2[cb];[ca][cb]amix=inputs=2:duration=first:normalize=0[oa];"
@@ -103,7 +104,7 @@ t_hero = next(a for a, b, t in cues if t.startswith(CH["hero_cue"])) + 0.7
 run("ffmpeg", "-loglevel", "error", "-y", "-ss", f"{t_hero:.2f}", "-i", "out/nosubs.mp4", "-frames:v", "1", "-vf", "scale=1080:1920:flags=lanczos", "work/hero.png")
 im = Image.open("work/hero.png").convert("RGBA")
 panel = Image.new("RGBA", im.size, (0, 0, 0, 0)); pd = ImageDraw.Draw(panel)
-pd.rectangle([0, 1285, 1080, 1765], fill=(255, 247, 234, 240))
+pd.rectangle([0, 1285, 1080, 1920], fill=(255, 247, 234, 255))
 im = Image.alpha_composite(im, panel); d = ImageDraw.Draw(im)
 ft, fs = ImageFont.truetype(FONT_B, 92), ImageFont.truetype(FONT_M, 46)
 y = 1335
@@ -112,9 +113,10 @@ for line in CH["thumb_title"]:
 d.line([(250, y + 14), (830, y + 14)], fill=(228, 126, 24), width=6)
 for line in [CH["thumb_sub"]]:
     w = d.textlength(line, font=fs); d.text(((1080 - w) / 2, y + 46), line, font=fs, fill=(94, 70, 50))
-tl = logo.resize((250, round(250 * logo.height / logo.width)), Image.LANCZOS)
+TW = LW + 60 if CH.get("badge_pos") == "left" else 250
+tl = logo.resize((TW, round(TW * logo.height / logo.width)), Image.LANCZOS)
 plate = Image.new("RGBA", (tl.width + 28, tl.height + 28), (0, 0, 0, 0))
 ImageDraw.Draw(plate).rounded_rectangle([0, 0, plate.width - 1, plate.height - 1], 28, fill=(255, 255, 255, 225)); plate.alpha_composite(tl, (14, 14))
-im.alpha_composite(plate, (1080 - plate.width - 40, 40))
+im.alpha_composite(plate, (0, 0) if CH.get("badge_pos") == "left" else (1080 - plate.width - 40, 40))
 im.convert("RGB").save(f"out/thumbnail_chanis_house_{SLUG}.jpg", quality=93)
 print("Thumbnail xong; hero t =", round(t_hero, 2))
